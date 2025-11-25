@@ -11,7 +11,7 @@ VOLUME_NAME="miOdoo_postgres_data_volume" # Nombre del volumen de Docker
 
 # 1. Detener los servicios para garantizar la integridad de los datos
 echo "-> Deteniendo contenedores..."
-docker-compose stop
+docker compose stop
 
 # 2. Preparación de directorios
 rm -f $PKG_PATH
@@ -40,7 +40,7 @@ rm -rf $TEMP_DB_DIR
 
 # 6. Iniciar los contenedores inmediatamente para continuar el trabajo
 echo "-> Iniciando contenedores de nuevo para continuar el trabajo..."
-docker-compose start
+docker compose start
 
 echo "✅ Copia de seguridad local completada y entorno reiniciado."
 echo "falta subit a GitHub..."

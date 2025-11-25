@@ -18,7 +18,7 @@ fi
 
 # 2. Limpieza de volúmenes antiguos y directorios
 echo "-> Eliminando volumen de PostgreSQL y carpetas locales antiguas..."
-docker-compose down -v 
+docker compose down -v 
 docker volume rm $VOLUME_NAME 2>/dev/null || true # Elimina el volumen nombrado para una restauración limpia
 rm -rf $TEMP_DB_DIR data/odoo/filestore data/odoo/sessions 
 mkdir -p $TEMP_DB_DIR # Recrea el directorio temporal
@@ -47,7 +47,7 @@ rm -rf $TEMP_DB_DIR
 
 # 6. Levantar los servicios de Docker
 echo "-> Iniciando Docker Compose..."
-docker-compose up -d
+docker compose up -d
 
 echo "======================================================="
 echo " ¡RESTAURACIÓN COMPLETA! Se ha corregido la lógica de inyección de datos."
