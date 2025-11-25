@@ -20,7 +20,7 @@ fi
 echo "-> Eliminando volumen de PostgreSQL y carpetas locales antiguas..."
 docker compose down -v 
 docker volume rm $VOLUME_NAME 2>/dev/null || true # Elimina el volumen nombrado para una restauración limpia
-rm -rf $TEMP_DB_DIR data/odoo/filestore data/odoo/sessions 
+rm -rf $TEMP_DB_DIR data/postgres_dev_quique/filestore data/postgres_dev_quique/sessions 
 mkdir -p $TEMP_DB_DIR # Recrea el directorio temporal
 
 # 3. Desempaquetar los datos de PostgreSQL y Odoo en carpetas temporales
