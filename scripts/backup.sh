@@ -30,8 +30,8 @@ docker run --rm \
 echo "-> Empaquetando datos (Named Volume + Bind Mounts) en $PKG_PATH..."
 tar -czvf $PKG_PATH \
     $TEMP_DB_DIR \
-    data/postgres_dev_quique/filestore \
-    data/postgres_dev_quique/sessions \
+    data/odoo/filestore/postgres_dev_quique \
+    data/odoo/sessions/no \
     --transform 's|data/temp_postgres_dump|data/dataPostgreSQL|'
 
 # 5. Limpiar directorios temporales
